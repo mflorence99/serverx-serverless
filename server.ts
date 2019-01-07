@@ -137,8 +137,8 @@ const routes: Route[] = [
 
 ];
 
-const app = new AWSLambdaApp(routes, { title: 'serverx-awslambda', version: '1.0' });
+const app = new AWSLambdaApp(routes, { title: 'serverx-serverless', version: '1.0' });
 
-export function handler(event, context) {
+export function aws(event, context) {
   return app.handle(event, context);
 }

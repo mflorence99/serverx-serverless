@@ -1,4 +1,4 @@
-service: serverx-awslambda
+service: serverx-serverless
 
 provider:
   name: aws
@@ -8,7 +8,7 @@ provider:
 
 functions:
   app:
-    handler: server.handler
+    handler: server.aws
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
