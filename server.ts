@@ -5,6 +5,7 @@ import { AWSLambdaApp } from 'serverx-ts';
 import { Compressor } from 'serverx-ts';
 import { COMPRESSOR_OPTS } from 'serverx-ts';
 import { CORS } from 'serverx-ts';
+import { GCFApp } from 'serverx-ts';
 import { Handler } from 'serverx-ts';
 import { Injectable } from 'injection-js';
 import { Message } from 'serverx-ts';
@@ -137,8 +138,14 @@ const routes: Route[] = [
 
 ];
 
-const app = new AWSLambdaApp(routes, { title: 'serverx-serverless', version: '1.0' });
+const awsApp = new AWSLambdaApp(routes, { title: 'serverx-serverless', version: '1.0' });
 
 export function aws(event, context) {
-  return app.handle(event, context);
+  return awsApp.handle(event, context);
+}
+
+const gcfApp = new GCFApp(routes, { title: 'serverx-serverless', version: '1.0' });
+
+export async function gcf(req, res) {
+  await gcfApp.handle(req, res);
 }

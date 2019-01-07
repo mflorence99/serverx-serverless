@@ -7,7 +7,8 @@
   "scripts": {
     "build": "npm run lint && tsc",
     "clean": "rm -rf node_modules && rm package-lock.json && npm install",
-    "deploy": "npm run build && sls deploy",
+    "deploy-aws": "npm run build && cp -f aws.yml serverless.yml && serverless deploy",
+    "deploy-gcf": "npm run build && cp -f gcf.yml serverless.yml && serverless deploy",
     "lint": "tslint --project ."
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@types/node": "10",
     "rimraf": "2",
+    "serverless-google-cloudfunctions": "*",
     "tslint": "5",
     "typescript": "3"
   }
