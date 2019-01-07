@@ -4,7 +4,7 @@ This app is an example of a serverless deployment of [ServeRX-ts](https://github
 
 > [serverless](https://serverless.com/) must be installed.
 
-> Be sure to include the following options in `tsconfig.json` when you build [ServeRX-ts](https://github.com/mflorence99/serverx-ts) applications:
+> Be sure to include the following options in `tsconfig.json` when building [ServeRX-ts](https://github.com/mflorence99/serverx-ts) applications:
 
 ```json
 {
@@ -20,7 +20,7 @@ This app is an example of a serverless deployment of [ServeRX-ts](https://github
 To deploy, first modify `aws.yml` appropriately. Then:
 
 ```sh
-  npm install // one time only
+  npm install # one time only
   npm run deploy-aws
 ```
 
@@ -31,7 +31,7 @@ See https://xgbb3jvk6h.execute-api.us-east-1.amazonaws.com/dev/openapi.yml for t
 To deploy, first modify `gcf.yml` appropriately. Then:
 
 ```sh
-  npm install // one time only
+  npm install # one time only
   npm run deploy-gcf
 ```
 
