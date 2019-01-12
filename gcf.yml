@@ -7,7 +7,7 @@ provider:
   name: google
   runtime: nodejs8
   project: gcf-project-89309
-  credentials: ~/.gcloud/keyfile.json
+  credentials: ~/.gcloud/gcf-project-89309.json
   region: us-east1
 
 plugins:
