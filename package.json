@@ -9,7 +9,6 @@
     "clean": "rm -rf node_modules && rm package-lock.json && npm install",
     "deploy-aws": "npm run build && cp -f aws.yml serverless.yml && serverless deploy",
     "deploy-gcf": "npm run build && cp -f gcf.yml serverless.yml && serverless deploy",
-    "emulate-gcf": "npm run build && cp -f gcf.yml serverless.yml && functions deploy gcf --trigger-http",
     "lint": "tslint --project ."
   },
   "dependencies": {

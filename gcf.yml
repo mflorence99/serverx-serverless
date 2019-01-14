@@ -12,13 +12,7 @@ provider:
 
 package:
   exclude:
-   - node_modules/axios/**
-   - node_modules/googleapis/**
-   - node_modules/rimraf/**
-   - node_modules/serverless-apigw-binary/**
-   - node_modules/serverless-google-cloudfunctions/**
-   - node_modules/tslint/**
-   - node_modules/typescript/**
+   - node_modules
 
 plugins:
   - serverless-google-cloudfunctions
