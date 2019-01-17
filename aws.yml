@@ -19,6 +19,9 @@ package:
    - node_modules/tslint/**
    - node_modules/typescript/**
 
+plugins:
+  - serverless-apigw-binary
+
 custom:
   apigwBinary:
     types:

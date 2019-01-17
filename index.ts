@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import { Attr } from 'serverx-ts';
 import { AWSLambdaApp } from 'serverx-ts';
+import { BinaryTyper } from 'serverx-ts';
 import { Compressor } from 'serverx-ts';
 import { COMPRESSOR_OPTS } from 'serverx-ts';
 import { CORS } from 'serverx-ts';
@@ -69,7 +70,7 @@ const routes: Route[] = [
   {
     path: '',
     methods: ['GET'],
-    middlewares: [RequestLogger, Compressor, CORS],
+    middlewares: [BinaryTyper, RequestLogger, Compressor, CORS],
     services: [
       { provide: REQUEST_LOGGER_OPTS, useValue: { colorize: true } },
       { provide: COMPRESSOR_OPTS, useValue: { threshold: 0 } } 

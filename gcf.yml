@@ -10,10 +10,6 @@ provider:
   credentials: ~/.gcloud/gcf-project-89309.json
   region: us-east1
 
-package:
-  exclude:
-   - node_modules
-
 plugins:
   - serverless-google-cloudfunctions
 
