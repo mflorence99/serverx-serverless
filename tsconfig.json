@@ -5,10 +5,7 @@
     "experimentalDecorators": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
@@ -20,12 +17,8 @@
     "rootDir": "./",
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2017",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "*.ts"
-  ],
+  "include": ["*.ts"],
   "exclude": []
 }

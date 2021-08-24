@@ -1,4 +1,4 @@
 /node_modules
-*.js
+index.js
 /.serverless
 serverless.yml

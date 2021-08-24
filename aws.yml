@@ -1,23 +1,18 @@
 service: serverx-serverless
 
-app: serverx-serverless
-tenant: mflorence99
-
 provider:
   name: aws
-  runtime: nodejs8.10
-  stage: dev
-  region: us-east-1
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
 
 package:
-  exclude:
-   - node_modules/axios/**
-   - node_modules/googleapis/**
-   - node_modules/rimraf/**
-   - node_modules/serverless-apigw-binary/**
-   - node_modules/serverless-google-cloudfunctions/**
-   - node_modules/tslint/**
-   - node_modules/typescript/**
+  patterns:
+    - '!node_modules/axios/**'
+    - '!node_modules/googleapis/**'
+    - '!node_modules/rimraf/**'
+    - '!node_modules/serverless-apigw-binary/**'
+    - '!node_modules/serverless-google-cloudfunctions/**'
+    - '!node_modules/typescript/**'
 
 plugins:
   - serverless-apigw-binary
@@ -32,4 +27,4 @@ functions:
     handler: index.aws
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: 'ANY /{proxy+}'

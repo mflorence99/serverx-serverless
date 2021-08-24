@@ -10,7 +10,7 @@ This app is an example of a serverless deployment of [ServeRX-ts](https://github
 {
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   }
 }
 ```

@@ -18,7 +18,8 @@ import { Route } from 'serverx-ts';
 
 import { tap } from 'rxjs/operators';
 
-@Injectable() class Explode extends Handler {
+@Injectable()
+class Explode extends Handler {
   handle(message$: Observable<Message>): Observable<Message> {
     return message$.pipe(
       tap(({ response }) => {
@@ -28,7 +29,8 @@ import { tap } from 'rxjs/operators';
   }
 }
 
-@Injectable() class Hello extends Handler {
+@Injectable()
+class Hello extends Handler {
   handle(message$: Observable<Message>): Observable<Message> {
     return message$.pipe(
       tap(({ response }) => {
@@ -38,7 +40,8 @@ import { tap } from 'rxjs/operators';
   }
 }
 
-@Injectable() class Goodbye extends Handler {
+@Injectable()
+class Goodbye extends Handler {
   handle(message$: Observable<Message>): Observable<Message> {
     return message$.pipe(
       tap(({ response }) => {
@@ -58,6 +61,7 @@ class FooBody {
   @Attr() p: string;
   @Attr() q: boolean;
   @Attr() r: number;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   @Attr({ _class: FooBodyInner }) t: FooBodyInner[];
 }
 
@@ -66,18 +70,16 @@ class FooBarParams {
 }
 
 const routes: Route[] = [
-
   {
     path: '',
     methods: ['GET'],
     middlewares: [BinaryTyper, RequestLogger, Compressor, CORS],
     services: [
       { provide: REQUEST_LOGGER_OPTS, useValue: { colorize: true } },
-      { provide: COMPRESSOR_OPTS, useValue: { threshold: 0 } } 
+      { provide: COMPRESSOR_OPTS, useValue: { threshold: 0 } }
     ],
     summary: 'A family of test endpoints',
     children: [
-
       {
         description: 'Develop OpenAPI representation of this server',
         path: 'openapi.yml',
@@ -88,7 +90,6 @@ const routes: Route[] = [
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
         path: '/foo',
         children: [
-
           {
             path: '/bar/{id}',
             request: {
@@ -103,7 +104,6 @@ const routes: Route[] = [
           {
             path: '/baz'
           }
-          
         ]
       },
 
@@ -133,20 +133,24 @@ const routes: Route[] = [
         path: '/not-here',
         redirectTo: 'http://over-there.com'
       }
-
     ]
   }
-
 ];
 
-const awsApp = new AWSLambdaApp(routes, { title: 'serverx-serverless', version: '1.0' });
+const awsApp = new AWSLambdaApp(routes, {
+  title: 'serverx-serverless',
+  version: '1.0'
+});
 
-export function aws(event, context) {
+export function aws(event, context): any {
   return awsApp.handle(event, context);
 }
 
-const gcfApp = new GCFApp(routes, { title: 'serverx-serverless', version: '1.0' });
+const gcfApp = new GCFApp(routes, {
+  title: 'serverx-serverless',
+  version: '1.0'
+});
 
-export function gcf(req, res) {
+export function gcf(req, res): any {
   gcfApp.handle(req, res);
 }
