@@ -1,7 +1,11 @@
 {
-  "name": "serverx-server",
+  "name": "serverx-serverless",
   "version": "1.0.0",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mflorence99/serverx-serverless.git"
+  },
   "author": "Mark Florence",
   "main": "index.js",
   "scripts": {

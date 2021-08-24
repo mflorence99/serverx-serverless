@@ -24,7 +24,7 @@ To deploy, first modify `aws.yml` appropriately. Then:
   npm run deploy-aws
 ```
 
-See https://xgbb3jvk6h.execute-api.us-east-1.amazonaws.com/dev/openapi.yml for the sample in action.
+See https://g0776hjw2i.execute-api.us-east-1.amazonaws.com/dev/openapi.yml for the sample in action.
 
 ## Google Cloud Functions
 
@@ -35,4 +35,4 @@ To deploy, first modify `gcf.yml` appropriately. Then:
   npm run deploy-gcf
 ```
 
-See https://us-east1-gcf-project-89309.cloudfunctions.net/gcf/openapi.yml for the sample in action.
+> https://us-east1-gcf-project-89309.cloudfunctions.net/gcf/openapi.yml not currently working
